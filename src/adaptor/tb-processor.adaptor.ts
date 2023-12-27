@@ -1,4 +1,4 @@
-import AuditDAO from "../dao/audit-dao";
+// import AuditDAO from "../dao/audit-dao";
 import AuditDetail, { IAuditDetail } from "../model/audit-detail.model";
 import TBAuditInfo from "../model/tb-audit-info.model";
 
@@ -18,7 +18,7 @@ class TBAdaptorProcessor {
   constructor() {}
 
   async process(message: string, context: any): Promise<Map<string, null>[]> {
-    const auditDAO = new AuditDAO();
+    // const auditDAO = new AuditDAO();
 
     const ITBAuditInfo: IAuditDetail = {
       runID: 1, // runID - set it to null/false to auto-increment (if your table is configured that way)
@@ -34,7 +34,7 @@ class TBAdaptorProcessor {
 
     const auditInfo = new AuditDetail(ITBAuditInfo);
 
-    await auditDAO.saveAuditDetails(auditInfo, context);
+    // await auditDAO.saveAuditDetails(auditInfo, context);
     return [new Map([["test", null]])];
   }
 }
